@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>click demo</title>
+  <style>
+  p {
+    color: red;
+    margin: 5px;
+    cursor: pointer;
+  }
+  p:hover {
+    background: yellow;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<p>First Paragraph</p>
+<p>Second Paragraph</p>
+<p>Yet one more Paragraph</p>
+
+<div id="target">
+  Click here
+</div>
+<div id="other">
+  Trigger the handler
+</div> 
+
+<script>
+var $target = $("#target");
+
+$target.click(function() {
+  alert( "Handler !!!! for .click() called." );
+});
+
+$(document).ready(function() {
+    $('div').click(function() {
+        alert( "Handler for .click() called." );
+        $('div').fadeOut('slow');
+    });
+});
+
+
+</script>
+ 
+</body>
+</html>
