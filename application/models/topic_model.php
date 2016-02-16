@@ -21,7 +21,7 @@ class Topic_model extends CI_Model{
 	function get($topic_id){
 		//echo "I am here";
 		//return $this->db->get_where('topic', array('id'=>$topic_id))->row();
-		$sql = "select * from topic where id = ?";	
+		$sql = "select id, title, description, created from topic where id = ?";	
 		//$query = $this->db->query($sql, array('id'=>100));
 		$query = $this->db->query($sql, array('id'=>$topic_id));
 		//$query = $this->db->query("SELECT * FROM topic WHERE id=".$topic_id);
@@ -33,7 +33,7 @@ class Topic_model extends CI_Model{
 		} else {
 			echo "Not success ..";
 			//echo $query->num_rows(); == 0
-			redirect() 
+			//redirect() 
 			return 0; // Has keys 'code' and 'message'
 		}
 		
