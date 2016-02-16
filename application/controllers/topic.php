@@ -6,7 +6,7 @@ class Topic extends CI_Controller {
         $this->load->database();
         $this->load->model('topic_model');
 
-        $this->load->helper('url','HTML', 'korean');
+       
     }
     function index(){
         $this->load->view('head');
@@ -20,6 +20,7 @@ class Topic extends CI_Controller {
         $topics = $this->topic_model->gets();
         $this->load->view('topic_list', array('topics'=>$topics));
         
+        $this->load->helper('url','HTML', 'korean');
         $topic = $this->topic_model->get($id);
         $this->load->view('get', array('topic'=>$topic));
         $this->load->view('footer');

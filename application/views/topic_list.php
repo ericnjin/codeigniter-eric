@@ -10,6 +10,4 @@
     ?>
 	</ul>
 	
-	
-	<?php echo anchor('blog/comments', 'Click Here');?>
 </div>
