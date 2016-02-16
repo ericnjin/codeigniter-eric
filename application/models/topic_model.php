@@ -43,6 +43,22 @@ class Topic_model extends CI_Model{
 	}
 
 
+	function add($title, $description){
+
+		//insert into topic
+		// this->db->last_query();
+
+		$this->db->set('created', 'NOW()', false);
+        $this->db->insert('topic',array(
+            'title'=>$title,
+            'description'=>$description
+        ));        
+        return $this->db->insert_id();
+
+
+	}
+
+
 
 
 }

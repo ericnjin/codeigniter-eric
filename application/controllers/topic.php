@@ -47,9 +47,16 @@ class Topic extends CI_Controller {
         }
         else
         {
-                echo "Successss.";
-                $this->load->view('formsuccess');
-                //$this->load->view('myform');
+                $topic_id=$this->topic_model->add($this->input->post('title'), $this->input->post('description'));
+                //echo "Successss.";
+
+                $this->load->helper('url');
+
+                //redirect('/topic/get/'.$topic_id);
+                $topic = $this->topic_model->get($topic_id);
+                $this->load->view('get', array('topic'=>$topic));
+                $this->load->view('footer');
+
         
         }
         
