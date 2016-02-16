@@ -7,4 +7,7 @@
             <?php echo $topic->description ?>
         </div>
     </article>
+    <div>
+    	<a href="/index.php/topic/add" class="btn">추가</a>
+    </div>
 </div>
