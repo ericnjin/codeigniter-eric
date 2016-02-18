@@ -53,3 +53,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 # sftp configuration file
 sftp-config.json
+
+
+# database and configuration
+/application/config/database.php
+/application/config/config.php
+
