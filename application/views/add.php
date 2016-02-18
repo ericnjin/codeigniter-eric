@@ -1,4 +1,4 @@
-<form action="/index.php/topic/add" method="post" class="span10">
+	<form action="/index.php/topic/add" method="post" class="span10">
 	<?php echo validation_errors(); ?>
 	<input type="text" name="title" placeholder="title" class="span12" />
 	<!-- <textarea name="" id="" cols="30" rows="10"> -->
@@ -6,3 +6,9 @@
 	<input class="btn" type="submit" />
 
 </form>	
+<script src="/static/lib/ckeditor/ckeditor.js"></script>
+<script>
+	CKEDITOR.replace('description', {
+		 filebrowserUploadUrl: '/uploader/upload.php'
+	});
+</script>
