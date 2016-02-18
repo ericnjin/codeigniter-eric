@@ -56,6 +56,9 @@ sftp-config.json
 
 
 # database and configuration
-##/application/config/database.php
-##/application/config/config.php
+/application/config/database.php
+/application/config/config.php
+/application/config/template/database.php
+/application/config/template/config.php
+
 
