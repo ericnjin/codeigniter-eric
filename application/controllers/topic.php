@@ -75,6 +75,55 @@ class Topic extends CI_Controller {
 
     }
 
+    function upload_receive_from_ckeditor(){
+        // 사용자가 업로드 한 파일을 /static/user/ 디렉토리에 저장한다.
+        $config['upload_path'] = './static/user';
+        // git,jpg,png 파일만 업로드를 허용한다.
+        $config['allowed_types'] = 'gif|jpg|png';
+        // 허용되는 파일의 최대 사이즈
+        $config['max_size'] = '100';
+        // 이미지인 경우 허용되는 최대 폭
+        $config['max_width']  = '1024';
+        // 이미지인 경우 허용되는 최대 높이
+        $config['max_height']  = '768';
+
+        log_message('debug', '나는 get upload_receive_from_ckeditor()');
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload("upload"))
+        {
+            echo "<script>alert('업로드에 실패 했습니다. ".$this->upload->display_errors('','')."')</script>";
+        }   
+        else
+        {
+            $CKEditorFuncNum = $this->input->get('CKEditorFuncNum');
+            $data = $this->upload->data();            
+            $filename = $data['file_name'];
+            
+            $url = '/static/user/'.$filename;
+            echo "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction('".$CKEditorFuncNum."', '".$url."', '전송에 성공 했습니다')</script>";         
+        }
+
+        // if ( ! $this->upload->do_upload('upload'))
+        // {
+        //         show_error('업로드 실패....??');
+        //         $error = array('error' => $this->upload->display_errors());
+        //         log_message('debug', var_export($error, 1));
+                
+                //echo $this->load->view('upload_form', $error);
+        // }
+        // else
+        // {
+        //         $data = array('upload_data' => $this->upload->data());
+
+        //         echo "file load sucsssss....";
+        //         var_dump($data);
+        //         //$this->load->view('upload_success', $data);
+        // }
+
+
+    }
     function upload_receive(){
         // 사용자가 업로드 한 파일을 /static/user/ 디렉토리에 저장한다.
         $config['upload_path'] = './static/user';

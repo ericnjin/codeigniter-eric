@@ -9,6 +9,6 @@
 <script src="/static/lib/ckeditor/ckeditor.js"></script>
 <script>
 	CKEDITOR.replace('description', {
-		 filebrowserUploadUrl: '/uploader/upload.php'
+		 filebrowserUploadUrl: '/index.php/topic/upload_receive_from_ckeditor'
 	});
 </script>
