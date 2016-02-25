@@ -172,6 +172,11 @@ class Topic extends CI_Controller {
 
     function _head(){   //private method...
 
+        //Once loaded, the Sessions library object will be available using:
+        var_dump($this->session->userdata('session_test'));
+        $this->session->set_userdata('session_test', 'ericnjin');
+
+        //$this->load->config('opentutorials');
         $this->load->view('head');
         $topics = $this->topic_model->gets();
         $this->load->view('topic_list', array('topics'=>$topics));

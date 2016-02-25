@@ -314,7 +314,7 @@ $config['cache_query_string'] = FALSE;
 | http://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'qwertyuioplkjhgfdsazxcvbnm123456';
 
 /*
 |--------------------------------------------------------------------------
@@ -374,6 +374,18 @@ $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
+
+
+// from opentutorials -----------------------------------------------------------
+// $config['sess_driver'] = 'database'; <-- 파일로 할것인지, DB로 할것인지 선택
+// $config['sess_cookie_name'] = 'ci_session';
+// $config['sess_expiration'] = 7200;
+// $config['sess_save_path'] = 'ci_sessions'; <-- 테이블이름
+
+// $config['sess_match_ip'] = FALSE;
+// $config['sess_time_to_update'] = 300;
+// $config['sess_regenerate_destroy'] = FALSE;
+// -------------------------------------------------------------------------------
 
 /*
 |--------------------------------------------------------------------------

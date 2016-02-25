@@ -7,18 +7,10 @@
     <li id="active">JavaScript</li>
 </ul>
     <script>
-    console.group('before');
-    var lis = document.getElementsByTagName('li');
-    for(var i = 0; i < lis.length; i++){
-        console.log(lis[i]);
-    }
-    console.groupEnd();
-    console.group('after');
-    lis[1].parentNode.removeChild(lis[1]);
-    for(var i = 0; i < lis.length; i++){
-        console.log(lis[i]);
-    }
-    console.groupEnd();
+    var friends = ["Mike", "Stacy", "Andy", "Rick"];
+        friends.forEach(function (eachName, index){
+            console.log(index + 1 + ". " + eachName); // 1. Mike, 2. Stacy, 3. Andy, 4. Rick​
+    });
     </script>
 </body>
 </html>
