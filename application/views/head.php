@@ -11,12 +11,21 @@
       <link href="/static/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
       <style>
           body{
-                padding-top:50px;
+                padding-top:100px;
               }
 
       </style>
     </head>
     <body>
+      <?php
+              if($this->session->flashdata('message')){
+      ?>
+              <script>
+                alert('<?=$this->session->flashdata('message')?>');
+              </script>
+      <?php
+              }
+      ?>
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">

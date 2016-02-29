@@ -5,6 +5,7 @@ class Topic extends CI_Controller {
         parent::__construct();
         $this->load->database();
         $this->load->model('topic_model');
+        //$this->session->sess_destroy();
 
        
     }
@@ -36,7 +37,19 @@ class Topic extends CI_Controller {
     }
 
     function add(){
-        //echo "Heloolqqqqqqqqqqqq";
+
+        if(!$this->session->userdata('is_login'))
+        {
+            //$this->session->sess_destroy();
+            echo("before redirec...");
+                $this->load->helper('url');
+             redirect('/auth/login');
+            
+        }else{
+
+
+        }
+
         
         $this->_head();
 
@@ -56,7 +69,7 @@ class Topic extends CI_Controller {
                 $topic_id=$this->topic_model->add($this->input->post('title'), $this->input->post('description'));
                 //echo "Successss.";
 
-                $this->load->helper('url');
+                //$this->load->helper('url');
 
                 //redirect('/topic/get/'.$topic_id);
                 $topic = $this->topic_model->get($topic_id);
@@ -173,8 +186,8 @@ class Topic extends CI_Controller {
     function _head(){   //private method...
 
         //Once loaded, the Sessions library object will be available using:
-        var_dump($this->session->userdata('session_test'));
-        $this->session->set_userdata('session_test', 'ericnjin');
+        // var_dump($this->session->userdata('session_test'));
+        // $this->session->set_userdata('session_test', 'ericnjin');
 
         //$this->load->config('opentutorials');
         $this->load->view('head');

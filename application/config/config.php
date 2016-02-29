@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
-
+//$config['base_url'] = '';
+$config['base_url'] = 'http://127.0.0.1:8080';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -315,6 +315,7 @@ $config['cache_query_string'] = FALSE;
 |
 */
 $config['encryption_key'] = 'qwertyuioplkjhgfdsazxcvbnm123456';
+//$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -367,24 +368,26 @@ $config['encryption_key'] = 'qwertyuioplkjhgfdsazxcvbnm123456';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
-$config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'ci_session';
-$config['sess_expiration'] = 7200;
-$config['sess_save_path'] = NULL;
-$config['sess_match_ip'] = FALSE;
-$config['sess_time_to_update'] = 300;
-$config['sess_regenerate_destroy'] = FALSE;
-
-
-// from opentutorials -----------------------------------------------------------
-// $config['sess_driver'] = 'database'; <-- 파일로 할것인지, DB로 할것인지 선택
-// $config['sess_cookie_name'] = 'ci_session';
+// $config['sess_driver'] = 'files';
+// $config['sess_driver'] = 'database';
+// $config['sess_cookie_name'] = '';
 // $config['sess_expiration'] = 7200;
-// $config['sess_save_path'] = 'ci_sessions'; <-- 테이블이름
+// $config['sess_save_path'] = '';
 
 // $config['sess_match_ip'] = FALSE;
 // $config['sess_time_to_update'] = 300;
 // $config['sess_regenerate_destroy'] = FALSE;
+
+
+// from opentutorials -----------------------------------------------------------
+$config['sess_driver'] = 'database'; // <===파일로 할것인지, DB로 할것인지 선택
+$config['sess_cookie_name'] = 'ci_session';
+$config['sess_expiration'] = 7200;
+$config['sess_save_path'] = 'ci_sessions'; //<--===테이블이름
+
+$config['sess_match_ip'] = FALSE;
+$config['sess_time_to_update'] = 300;
+$config['sess_regenerate_destroy'] = FALSE;
 // -------------------------------------------------------------------------------
 
 /*
@@ -523,3 +526,10 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+//for test 
+$config['authentication'] = array( 
+	'id' => 'ericnjin',  
+	'password' => 'yykim000'
+	);
