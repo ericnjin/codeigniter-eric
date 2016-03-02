@@ -22,7 +22,7 @@ echo("GG...in\n");
 
         //$this->session->sess_destroy();
  		//$this->load->helper('url');
- 		redirect('auth/login');
+ 		redirect('auth/login', 'reflesh');
 
 echo("GG\n...out");
         //redirect("auth/login");

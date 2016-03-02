@@ -7,13 +7,8 @@ class Auth extends CI_Controller {
 
     function login(){
     	echo "Hello Auth....";
-    	//$this->load->helper('url');
-        //echo("redirec...");
-        //redirect('/topic/get/2');
-        //redirect('/topic');
-        //$this->_head();
+
         $this->load->view('head');
-        
         $this->load->view('login');
         $this->load->view('footer');
 
@@ -33,7 +28,7 @@ class Auth extends CI_Controller {
     	    $this->load->helper('url');
     		
     		//redirect ('topic/add')
-    		redirect('topic/add');
+    		redirect('topic/add', 'reflesh');
 
 
     	}
@@ -45,7 +40,7 @@ class Auth extends CI_Controller {
     		$this->load->helper('url');
     		
     		//redirect ('topic/add')
-    		redirect('auth/login');
+    		redirect('auth/login', 'reflesh');
 
     	}
     }
