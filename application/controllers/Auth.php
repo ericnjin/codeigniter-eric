@@ -1,5 +1,5 @@
 <?php
-class Auth extends CI_Controller {
+class Auth extends CI_Controller  {
     function __construct()
     {
         parent::__construct();
@@ -13,6 +13,15 @@ class Auth extends CI_Controller {
         $this->load->view('footer');
 
     }
+
+
+    function logout(){
+        $this->session->sess_destroy();
+        $this->load->helper('url');
+        redirect('/');
+    }
+
+
     function authentication(){
 
     	$authentication = $this->config->item('authentication');
@@ -36,7 +45,7 @@ class Auth extends CI_Controller {
     	else{
     		echo "'NOT Success !!!//";
     		//set_flash
-    		$this->session->set_flashdata('message', 'Login Failed..');
+    		$this->session->set_flashdata('message', 'Login Failed..');  //Codeigniter 기능 
     		$this->load->helper('url');
     		
     		//redirect ('topic/add')

@@ -23,6 +23,7 @@
               <script>
                 alert('<?=$this->session->flashdata('message')?>');
               </script>
+
       <?php
               }
       ?>
@@ -43,6 +44,22 @@
             <!-- Everything you want hidden at 940px or less, place within here -->
             <div class="nav-collapse collapse">
               <!-- .nav, .navbar-search, .navbar-form, etc -->
+                <ul class="nav pull-right">
+                <?php
+                if($this->session->userdata('is_login')){
+                ?>
+                    <li> <a href="/index.php/auth/login">Log In</a></li>
+                
+                <?php
+                } else {
+                ?>
+                    <li> <a href="/index.php/auth/logout">Log Out</a></li>
+                
+                <?php
+                }
+                ?>
+
+              </ul>
             </div>
        
           </div>
