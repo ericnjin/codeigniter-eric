@@ -1,10 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Topic extends CI_Controller  {
+class Topic extends MY_Controller  {
     function __construct()
     {
         parent::__construct();
         $this->load->database();
         $this->load->model('topic_model');
+
+        $this->load->helper('form');
         //$this->session->sess_destroy();
 
        
@@ -14,9 +16,11 @@ class Topic extends CI_Controller  {
         // $topics = $this->topic_model->gets();
         // $this->load->view('topic_list', array('topics'=>$topics));
         $this->_head();
+        $this->_sidebar();
         
         $this->load->view('main');
-        $this->load->view('footer');
+        //$this->load->view('footer');
+        $this->_footer();
     }
     function get($id){
         // $this->load->view('head');
@@ -24,6 +28,7 @@ class Topic extends CI_Controller  {
         // $this->load->view('topic_list', array('topics'=>$topics));
         log_message('debug', 'get 호출');
         $this->_head();
+        $this->_sidebar();
         
         $this->load->helper('url','HTML', 'korean');
         $topic = $this->topic_model->get($id);
@@ -33,7 +38,8 @@ class Topic extends CI_Controller  {
         }
 
         $this->load->view('get', array('topic'=>$topic));
-        $this->load->view('footer');
+        //$this->load->view('footer');
+        $this->_footer();
     }
 
     function add(){
@@ -41,9 +47,9 @@ class Topic extends CI_Controller  {
         if(!$this->session->userdata('is_login'))
         {
             //$this->session->sess_destroy();
-            echo("before redirec...");
-                $this->load->helper('url');
-             redirect('/auth/login');
+            //echo("before redirec...");
+            $this->load->helper('url');
+            redirect('/auth/login?returnURL='.rawurlencode(site_url('/topic/add')));
             
         }else{
 
@@ -52,6 +58,7 @@ class Topic extends CI_Controller  {
 
         
         $this->_head();
+        $this->_sidebar();
 
         // echo $this->input->post('title');
         // echo $this->input->post('description');
@@ -68,15 +75,33 @@ class Topic extends CI_Controller  {
         {
                 $topic_id=$this->topic_model->add($this->input->post('title'), $this->input->post('description'));
                 //echo "Successss.";
+                //send mails to users
+                $this->load->model('user_model');
+                $users = $this->user_model->gets();
 
-                //$this->load->helper('url');
-
-                //redirect('/topic/get/'.$topic_id);
-                $topic = $this->topic_model->get($topic_id);
-                $this->load->view('get', array('topic'=>$topic));
-                $this->load->view('footer');
+                $this->load->library('email');
+                $this->email->initialize(array( 'mailtype' => 'html'));
 
         
+
+                //$this->load->helper('url');
+                foreach($users as $myuser){
+                    //var_dump($myuser);
+                    $this->email->from('erkim@ines.co.kr', 'Eric Y. Kim');
+                    $this->email->to($myuser->email);
+
+                    $this->email->subject('새로운 글이 등록되었습니다');
+                    $this->email->message('<a href="'.site_url('/topic/get/'.$topic_id).'">'.$this->input->post('title').'</a>'); 
+
+                    $this->email->send();
+                }
+
+                
+                $topic = $this->topic_model->get($topic_id);
+                $this->load->view('get', array('topic'=>$topic));
+                //$this->load->view('footer');
+                //$this->_footer();
+                //redirect('/topic/get/'.$topic_id);
         }
         
 
@@ -84,8 +109,8 @@ class Topic extends CI_Controller  {
         // $topic = $this->topic_model->get($id);
         // $this->load->view('get', array('topic'=>$topic));
         
-        $this->load->view('footer');
-
+        //$this->load->view('footer');
+        $this->_footer();
     }
 
     function upload_receive_from_ckeditor(){
@@ -177,23 +202,16 @@ class Topic extends CI_Controller  {
         log_message('debug', 'get upload_form()');
 
         $this->_head();
+        $this->_sidebar();
         $this->load->view('upload_form');
-        $this->load->view('footer');
-
-
-    }
-
-    function _head(){   //private method...
-
-        //Once loaded, the Sessions library object will be available using:
-        // var_dump($this->session->userdata('session_test'));
-        // $this->session->set_userdata('session_test', 'ericnjin');
-
-        //$this->load->config('opentutorials');
-        $this->load->view('head');
-        $topics = $this->topic_model->gets();
-        $this->load->view('topic_list', array('topics'=>$topics));
+        //$this->load->view('footer');
+        $this->_footer();
 
     }
+
+    
+
+   
 }
 ?>
+    

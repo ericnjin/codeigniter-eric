@@ -48,12 +48,14 @@
                 <?php
                 if($this->session->userdata('is_login')){
                 ?>
-                    <li> <a href="/index.php/auth/login">Log In</a></li>
+                    
+                    <li> <a href="/index.php/auth/logout">Log Out</a></li>
                 
                 <?php
                 } else {
                 ?>
-                    <li> <a href="/index.php/auth/logout">Log Out</a></li>
+                    <li> <a href="/index.php/auth/login">Log In</a></li>
+                    <li> <a href="/index.php/auth/register">회원가입</a></li>
                 
                 <?php
                 }
