@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-      <meta charset="utf-8"/>
-
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <!-- Bootstrap -->
-      <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-      <link href="/static/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-      <style>
-          body{
-                padding-top:100px;
-              }
-
-      </style>
-    </head>
-    <body>
 <hr/>
 상품 리스트
 <hr/>
@@ -119,5 +100,3 @@
 <pre>
 <?php var_dump($this->cart->contents());?>
 </pre>
- </body>
-</html>
