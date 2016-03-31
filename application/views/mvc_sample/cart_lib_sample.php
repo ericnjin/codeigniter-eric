@@ -1,3 +1,6 @@
+<div class="panel-heading">Panel heading</div>
+ <div class="container">
+	 
 <hr/>
 상품 리스트
 <hr/>
@@ -5,16 +8,19 @@
 <input type="hidden" name="id" value="g1011" />
 <input type="hidden" name="name" value="sample1" />
 <input type="hidden" name="price" value="10000" />
-<table class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+<!-- <table class="tablesorter" border="0" cellpadding="0" cellspacing="1"> -->
+<!-- <table class="table"> -->
+<table class="table table-striped">
 <thead>
 <tr>
-  <th style="text-align:center" width="20%">상품명</th>
-  <th style="text-align:center" width="20%">수량</th>
-  <th style="text-align:center" width="20%">단가</th>
-  <th style="text-align:center" width="20%">상품 옵션</th>
+  <th style="text-align:left" width="20%">상품명</th>
+  <th style="text-align:left" width="20%">수량</th>
+  <th style="text-align:left" width="20%">단가</th>
+  <th style="text-align:left" width="20%">상품 옵션</th>
   <th width="20%"></th>
 </tr>
 </thead>
+
 <tr>
 <td>sample 1</td>
 <td style="text-align:center">
@@ -23,19 +29,54 @@
 <td style="text-align:right">10,000원</td>
 <td style="text-align:center">
     사이즈 :
-    <select name="size">
-        <option value="L">L</option>
-        <option value="M">M</option>
+    <!-- <select name="size">
+        <option width="20%" value="L">L</option>
+        <option width="20%" value="M">M</option>
         <option value="S">S</option>
     </select>
+ -->
+     <!-- start Drop donw -->
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">L</a></li>
+    <li><a href="#">M</a></li>
+    <li><a href="#">S</a></li>
+    <!-- <li role="separator" class="divider"></li> -->
+    <!-- <li><a href="#">Separated link</a></li> -->
+  </ul>
+</div>
+
+
+     <!--   End Drop Down -->
  
      
     색상 :
-    <select name="color">
+    <!-- <select name="color">
         <option value="노랑">노랑</option>
         <option value="파랑">파랑</option>
         <option value="빨강">빨강</option>
     </select>
+ -->
+	<!-- start -->
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">노랑</a></li>
+    <li><a href="#">M</a></li>
+    <li><a href="#">S</a></li>
+    <!-- <li role="separator" class="divider"></li> -->
+    <!-- <li><a href="#">Separated link</a></li> -->
+  </ul>
+</div>
+
+	<!-- End  -->
 </td>
 <td style="text-align:center"><input type="submit" value="장바구니 담기" /></td>
 </tr>
@@ -46,7 +87,10 @@
 장바구니 내역
 <hr/>
 <form method="post" action="<?=site_url('cart_lib/update')?>">
-<table class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+<!-- <table class="tablesorter" border="0" cellpadding="0" cellspacing="1"> -->
+<table class="table table-striped">
+
+
 <thead>
 <tr>
     <th>취소</th>

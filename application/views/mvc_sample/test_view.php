@@ -1,36 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-      <meta charset="utf-8"/>
-
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <!-- Bootstrap -->
-<!--       <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-      <link href="/static/lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
- -->      <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-      <style>
-
-
-          
-      </style>  
- <body>
-    <!-- <h1>Hello, world!</h1> -->
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-
 <div class="panel-heading">Panel heading</div>
  <div class="container">
   <!-- Default panel contents -->
@@ -39,15 +6,12 @@
 <!-- <div class="table-responsive"> -->
 
   <!-- Table -->
-	 <!-- <table class="table"> -->
+	<!-- <table class="table"> -->
 		 <!-- <table class="table table-bordered"> -->
 	 <table class="table table-striped">
-	 <!-- <table class="table table-condensed"> -->
+	<!-- <table class="table table-condensed"> -->
 
-
- 
-
-		    	<!-- <table class="tablesorter" border="0" cellpadding="0" cellspacing="1"> -->
+   	<!-- <table class="tablesorter" border="0" cellpadding="0" cellspacing="1"> -->
 		<thead>
 		<tr>
 		  <th style="text-align:center" width="20%">구간</th>
@@ -129,6 +93,3 @@
 <div class="col-xs-6">.col-xs-6</div>
 
 </div>
-
-  </body>
-</html>
