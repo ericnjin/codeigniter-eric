@@ -1,95 +1,105 @@
-<div class="panel-heading">Panel heading</div>
- <div class="container">
-  <!-- Default panel contents -->
-  
-  	
-<!-- <div class="table-responsive"> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
 
-  <!-- Table -->
-	<!-- <table class="table"> -->
-		 <!-- <table class="table table-bordered"> -->
-	 <table class="table table-striped">
-	<!-- <table class="table table-condensed"> -->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-   	<!-- <table class="tablesorter" border="0" cellpadding="0" cellspacing="1"> -->
-		<thead>
-		<tr>
-		  <th style="text-align:center" width="20%">구간</th>
-		  <th width="40%">벤치마크</th>
-		  <th width="40%">Description</th>
-		</tr>
-		</thead>
-		<tr>
-		    <td style="text-align:center">code_start ~ code_end</td>
-		    <td style="text-align:center"><?php echo $code;?></td>
-		    <td style="text-align:center"></td>
-		</tr>
-		<tr>
-		    <td>dog ~ cat</td>
-		    <td><?php echo $dog_cat;?></td>
-		    <td></td>
-		</tr>
-		<tr>
-		    <td>cat ~ bird</td>
-		    <td><?php echo $cat_bird;?></td>
-		    <td></td>
-		</tr>
-		<tr>
-		    <td>dog ~ bird</td>
-		    <td><?php echo $dog_bird;?></td>
-			    <td></td>
-		</tr>
-		<tr>
-		    <td>전체수행시간</td>
-		    <td><?php echo $this->benchmark->elapsed_time();?></td>
-		    <td></td>
-		</tr>
-		<tr>
-		    <td>전체수행시간(축약코드)</td>
-		    <td>0.0303</td>
-		    <td></td>
-		</tr>
-		<tr>
-		    <td>메모리 사용량</td>
-		    <td><?php echo $this->benchmark->memory_usage();?></td>
-		    <td></td>
-		</tr>
-		<tr>
-		    <td>메모리 사용량 (축약코드)</td>
-		    <td>0.65MB</td>
-		    <td></td>
-		</tr>
-	</table>
-  <!-- </table> -->
-  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
 
-<div class="row">
-  
-<div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
-  
-<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+<!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- <script src="js/bootstrap.min.js"></script> -->
 
+<script type="text/javascript">
+$(function(){
+    $("#popbutton").click(function(){
+        $('div.modal').modal({remote : 'mvc_sample/layer.html'});
+    })
+})
+</script>
+
+    <h1>Hello, world!</h1>
+
+    <button class="btn btn-default">DEFAULT</button>
+<button class="btn btn-primary">BLUE</button>
+<button class="btn btn-success">GREEN</button>
+<button class="btn btn-info">SKY</button>
+<button class="btn btn-warning">YELLO</button>
+<button class="btn btn-danger">RED</button>
+<br/>
+<button class="btn btn-default btn-lg">LARGE DEFAULT</button>
+<button class="btn btn-default btn-sm">SMALL DEFAULT</button>
+<button class="btn btn-default btn-xs">VERY SMALL DEFAULT</button>
+<br/>
+<br/> 
+
+<!-- 기존 default 색상별 버튼 -->
+<button class="btn btn-default">DEFAULT</button>
+<button class="btn btn-primary">BLUE</button>
+<button class="btn btn-success">GREEN</button>
+<button class="btn btn-info">SKY</button>
+<button class="btn btn-warning">YELLO</button>
+<button class="btn btn-danger">RED</button>
+<br/><br/>
+<!-- 가로형 그룹버튼 -->
+<div class="btn-group">
+<button class="btn btn-default">DEFAULT</button>
+<button class="btn btn-primary">BLUE</button>
+<button class="btn btn-success">GREEN</button>
+<button class="btn btn-info">SKY</button>
+<button class="btn btn-warning">YELLO</button>
+<button class="btn btn-danger">RED</button>
+</div>
+<br/><br/>
+<!-- 세로형 그룹버튼 -->
+<div class="btn-group-vertical">
+<button class="btn btn-default">DEFAULT</button>
+<button class="btn btn-primary">BLUE</button>
+<button class="btn btn-success">GREEN</button>
+<button class="btn btn-info">SKY</button>
+<button class="btn btn-warning">YELLO</button>
+<button class="btn btn-danger">RED</button>
+</div>
+
+<br/>
+<div class="btn-group">
+    <!-- 추가 버튼태그 -->
+    <button class="btn btn-default" type="button">
+        메뉴버튼
+    </button>
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+    <!-- 버튼태그 우측 메뉴출력을 위한 화살표표시
+        (없어도 무관하나 메뉴버튼이라는것을 알려주기 위함) -->
+    <span class="caret"></span>
+    </button>
+    <!--메뉴버튼 클릭시 하단 표출된 리스트 영역  -->
+    <ul class="dropdown-menu" >
+        <!-- 메뉴1 -->
+        <li><a href="#">메뉴1</a></li>
+        <!-- 메뉴2 -->
+        <li><a href="#">메뉴2</a></li>
+    </ul>
 </div>
 
 
-<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-
-<div class="row">
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  
-<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  
-<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-
-</div>
 
 
-<!-- Columns are always 50% wide, on mobile and desktop -->
-
-<div class="row">
-  
-<div class="col-xs-6">.col-xs-6</div>
-  
-<div class="col-xs-6">.col-xs-6</div>
-
-</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+  </body>
+</html>

@@ -39,7 +39,9 @@ class Benchmark_lib extends MY_Controller {
 		//$this->_footer();
  		//$this->load->view('mvc_sample/benchmark_lib_sample', $data);
  		$this->load->view('mvc_sample/header');
- 		$this->load->view('mvc_sample/test_view', $data);
+ 		//$this->load->view('mvc_sample/test_view', $data);
+ 		$this->load->view('mvc_sample/test_view2', $data);
+ 		
  		$this->load->view('mvc_sample/footer');
 		//$this->_footer();
 	}
